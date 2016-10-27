@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="User" table="User">
+    <indexes>
+      <index name="fk_User_typeUser1_idx" columns="typeUser_idtypeUser"/>
+    </indexes>
+    <id name="iduser" type="string" column="idUser" length="10">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="string" column="nom" length="45" nullable="false"/>
+    <field name="mdpasse" type="string" column="mdpasse" length="45" nullable="false"/>
+    <field name="inscription" type="datetime" column="inscription" nullable="false"/>
+    <field name="produit" type="string" column="produit" length="8" nullable="true"/>
+    <field name="private" type="boolean" column="private" nullable="false"/>
+    <many-to-one field="typeusertypeuser" target-entity="Typeuser">
+      <join-columns>
+        <join-column name="typeUser_idtypeUser" referenced-column-name="idtypeUser"/>
+      </join-columns>
+    </many-to-one>
+    <many-to-many field="musiquemusique" target-entity="Musique" mapped-by="useruser"/>
+  </entity>
+</doctrine-mapping>

@@ -1,0 +1,7 @@
+sama_sound:
+    resource: "@SamaSoundBundle/Resources/config/routing.yml"
+    prefix:   /
+
+app:
+    resource: @AppBundle/Controller/
+    type:     annotation

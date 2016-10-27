@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<doctrine-mapping xmlns="http://doctrine-project.org/schemas/orm/doctrine-mapping" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://doctrine-project.org/schemas/orm/doctrine-mapping http://doctrine-project.org/schemas/orm/doctrine-mapping.xsd">
+  <entity name="Musique" table="Musique">
+    <id name="idmusique" type="integer" column="idMusique">
+      <generator strategy="IDENTITY"/>
+    </id>
+    <field name="nom" type="string" column="nom" length="45" nullable="true"/>
+    <field name="auteur" type="string" column="auteur" length="45" nullable="true"/>
+    <field name="album" type="string" column="album" length="45" nullable="true"/>
+    <field name="photo" type="string" column="photo" length="45" nullable="true"/>
+    <field name="sortie" type="date" column="sortie" nullable="true"/>
+    <many-to-many field="useruser" target-entity="User" inversed-by="musiquemusique">
+      <join-table name="deposer">
+        <join-columns>
+          <join-column name="Musique_idMusique" referenced-column-name="idMusique"/>
+        </join-columns>
+        <inverse-join-columns>
+          <join-column name="User_idUser" referenced-column-name="idUser"/>
+        </inverse-join-columns>
+      </join-table>
+    </many-to-many>
+  </entity>
+</doctrine-mapping>

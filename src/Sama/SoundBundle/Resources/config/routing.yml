@@ -1,0 +1,50 @@
+sama_sound_homepage:
+    path:     /hello/
+    defaults: { _controller: SamaSoundBundle:Default:index }
+
+
+
+###############################################################################
+#route pour user
+user:
+    path:     /user
+    defaults: { _controller: SamaSoundBundle:User:index }
+    requirements:
+        _method: GET
+
+User_create:
+    path:     /User
+    defaults: { _controller: SamaSoundBundle:User:create }
+    requirements:
+        _method: POST
+
+User_new:
+    path:     /user_new
+    defaults: { _controller: SamaSoundBundle:User:new }
+    requirements:
+        _method: GET
+
+User_show:
+    path:     /User/{id}
+    defaults: { _controller: SamaSoundBundle:User:show }
+    requirements:
+        _method: GET
+
+User_edit:
+    path:     /User/{id}/edit
+    defaults: { _controller: SamaSoundBundle:User:edit }
+    requirements:
+        _method: GET
+
+User_update:
+    path:     /User/{id}
+    defaults: { _controller: SamaSoundBundle:User:update }
+    requirements:
+        _method: PUT
+
+User_delete:
+    path:     /User/{id}
+    defaults: { _controller: SamaSoundBundle:User:delete }
+    requirements:
+        _method: DELETE
+#####################################################################################

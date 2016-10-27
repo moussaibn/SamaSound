@@ -1,0 +1,32 @@
+{% extends '::base.html.twig' %}
+
+{% block body -%}
+    <h1>Typeuser</h1>
+
+    <table class="record_properties">
+        <tbody>
+            <tr>
+                <th>Idtypeuser</th>
+                <td>{{ entity.idtypeuser }}</td>
+            </tr>
+            <tr>
+                <th>Nom</th>
+                <td>{{ entity.nom }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+        <ul class="record_actions">
+    <li>
+        <a href="{{ path('typeuser') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('typeuser_edit', { 'id': entity.idtypeuser }) }}">
+            Edit
+        </a>
+    </li>
+    <li>{{ form(delete_form) }}</li>
+</ul>
+{% endblock %}
